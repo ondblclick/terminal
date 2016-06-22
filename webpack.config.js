@@ -14,7 +14,8 @@ module.exports = {
     loaders: [
       { test: /\.coffee$/, loader: 'coffee-loader' },
       { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass') },
-      { test: /\.png$/, loader: 'file-loader?name=/images/[name].[ext]' }
+      { test: /\.png$/, loader: 'file-loader?name=/images/[name].[ext]' },
+      { test: /\.(eot|svg|ttf|woff)$/, loader: 'file-loader?name=/fonts/[name].[ext]' }
     ]
   },
   plugins: [

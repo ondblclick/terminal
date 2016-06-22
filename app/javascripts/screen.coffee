@@ -8,8 +8,8 @@ class TerminalScreen
     document.getElementById('display')
 
   navigateTo: (screen) ->
-    document.querySelector('#display .screen-inner').classList.add('remove')
-    setTimeout screen.run.bind(screen), 500
+    @displayEl().innerHTML = ''
+    screen.run()
 
   run: ->
     @displayEl().innerHTML = ''
