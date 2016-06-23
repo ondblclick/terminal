@@ -1,6 +1,8 @@
 class TerminalScreen
   constructor: (@path) ->
 
+  bindings: ->
+
   el: ->
     document.getElementById(@path)
 
@@ -14,5 +16,6 @@ class TerminalScreen
   run: ->
     @displayEl().innerHTML = ''
     @displayEl().appendChild(@el().children[0].cloneNode(true))
+    @bindings()
 
 module.exports = TerminalScreen

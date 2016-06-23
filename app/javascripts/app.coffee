@@ -1,5 +1,6 @@
 Terminal = require('./terminal.coffee')
 AuthorizeScreen = require('./screens/authorize_screen.coffee')
+Api = require('./api/api.coffee')
 
 terminal = new Terminal({ startScreen: new AuthorizeScreen('authorize') })
 

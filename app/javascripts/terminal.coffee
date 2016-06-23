@@ -6,7 +6,6 @@ class Terminal
 
   on: ->
     @startScreen.run()
-    @startScreen.bindings()
 
   off: ->
     @el().innerHTML = ''

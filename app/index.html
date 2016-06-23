@@ -12,17 +12,68 @@
       </div>
     </div>
 
-    <div id="authorize" class="authorize-screen screen">
+    <div id="camera" class="screen">
+      <div class="screen-inner">
+        CAMERA SCREEN
+      </div>
+    </div>
+
+    <div id="authorize" class="screen">
       <div class="screen-inner">
         <div>ROBCO INDUSTRIES (TM) TERMALINK PROTOCOL</div>
         <div>ENTER PASSWORD NOW</div>
         <br>
-        <a id="fail" href="#">FAIL</a>
-        <a id="success" href="#">SUCCESS</a>
+        <div id='input' style='height: 15px;'></div>
+        <br>
+        <div id='symbols'>
+          <a href='#'>A</a>
+          <a href='#'>B</a>
+          <a href='#'>C</a>
+          <a href='#'>D</a>
+          <a href='#'>E</a>
+          <a href='#'>F</a>
+          <a href='#'>G</a>
+          <a href='#'>H</a>
+          <a href='#'>I</a>
+          <a href='#'>J</a>
+          <a href='#'>K</a>
+          <a href='#'>L</a>
+          <a href='#'>M</a>
+          <a href='#'>N</a>
+          <a href='#'>O</a>
+          <a href='#'>P</a>
+          <a href='#'>Q</a>
+          <a href='#'>R</a>
+          <a href='#'>S</a>
+          <a href='#'>T</a>
+          <a href='#'>U</a>
+          <a href='#'>V</a>
+          <a href='#'>W</a>
+          <a href='#'>X</a>
+          <a href='#'>Y</a>
+          <a href='#'>Z</a>
+          <br>
+          <a href="#">0</a>
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+        </div>
+        <br>
+        <a href="#" id='ok'>OK</a>
+        <!-- <br>
+        <br> -->
+        <!-- <a id="fail" href="#">FAIL</a>
+        <a id="success" href="#">SUCCESS</a> -->
       </div>
     </div>
 
-    <div id="authorize_fail" class="authorize-screen screen">
+    <div id="authorize_fail" class="screen">
       <div class="screen-inner">
         <div class="text-center">
           <div>TERMINAL LOCKED</div>
@@ -31,7 +82,7 @@
       </div>
     </div>
 
-    <div id="menu" class="authorize-screen screen">
+    <div id="menu" class="screen">
       <div class="screen-inner">
         <div class="text-center">
           <div>ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM</div>
@@ -42,12 +93,13 @@
         <p>Welcome, Overseer.</p>
         <div class="divider"></div>
         <ul>
-          <li><a href="#">Camera</a></li>
-          <li><a href="#">Energy</a></li>
-          <li><a href="#">Thermostat</a></li>
-          <li><a href="#">Smoke + CO</a></li>
+          <li><a id='camera' href="#">Camera</a></li>
+          <li><a id='energy' href="#">Energy</a></li>
+          <li><a id='thermostat' href="#">Thermostat</a></li>
+          <li><a id='smoke' href="#">Smoke + CO</a></li>
         </ul>
       </div>
     </div>
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
   </body>
 </html>
