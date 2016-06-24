@@ -1,6 +1,5 @@
 module.exports = {
   getData: (token) ->
-    console.log token
     ref = new Firebase('wss://developer-api.nest.com')
     ref.auth(token)
     ref.on 'value', (snapshot) ->
@@ -11,7 +10,7 @@ module.exports = {
     xhr = new XMLHttpRequest
     xhr.addEventListener 'readystatechange', ->
       if @readyState == 4
-        cb(JSON.parse(@responseText).access_token)
+        cb(JSON.parse(@responseText))
 
     xhr.open 'POST', "https://cors-anywhere.herokuapp.com/api.home.nest.com/oauth2/access_token?" +
                      "client_id=675828bd-1689-4422-94f4-4b3a5776746f&" +

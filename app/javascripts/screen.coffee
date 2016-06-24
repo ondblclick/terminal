@@ -18,4 +18,12 @@ class TerminalScreen
     @displayEl().appendChild(@el().children[0].cloneNode(true))
     @bindings()
 
+  runProgressBar: ->
+    interval = setInterval(->
+      if document.querySelector('.display .progressbar')
+        document.querySelector('.display .progressbar').innerHTML += '*'
+      else
+        clearInterval(interval)
+    , 500)
+
 module.exports = TerminalScreen
