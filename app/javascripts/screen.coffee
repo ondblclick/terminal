@@ -1,7 +1,8 @@
 class TerminalScreen
   constructor: (@path) ->
+    @interval = false
 
-  bindings: ->
+  afterRun: ->
 
   el: ->
     document.getElementById(@path)
@@ -16,14 +17,23 @@ class TerminalScreen
   run: ->
     @displayEl().innerHTML = ''
     @displayEl().appendChild(@el().children[0].cloneNode(true))
-    @bindings()
+    @afterRun()
 
-  runProgressBar: ->
-    interval = setInterval(->
-      if document.querySelector('.display .progressbar')
-        document.querySelector('.display .progressbar').innerHTML += '*'
-      else
-        clearInterval(interval)
-    , 500)
+  @startProgressBar: ->
+    @stopProgressBar()
+    el = document.querySelector('.display .progressbar')
+    unless el
+      el = document.createElement('div')
+      el.classList.add('progressbar')
+      document.querySelector('.display .screen-inner').appendChild(el)
+
+    @interval = setInterval ->
+      el.innerHTML += '*'
+    , 500
+
+  @stopProgressBar: ->
+    clearInterval(@interval)
+    el = document.querySelector('.display .progressbar')
+    el.remove() if el
 
 module.exports = TerminalScreen

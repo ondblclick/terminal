@@ -13,12 +13,6 @@
       </div>
     </div>
 
-    <div id="camera" class="screen">
-      <div class="screen-inner">
-        CAMERA SCREEN
-      </div>
-    </div>
-
     <div id="authorize" class="screen">
       <div class="screen-inner">
         <div>ROBCO INDUSTRIES (TM) TERMALINK PROTOCOL</div>
@@ -71,7 +65,6 @@
         <br>
         <a href="#" id='ok'>OK</a>
         <a href="https://home.nest.com/login/oauth2?client_id=675828bd-1689-4422-94f4-4b3a5776746f&state=STATE" target="_blank">(hit me, Dweller)</a>
-        <div class="progressbar"></div>
       </div>
     </div>
 
@@ -96,12 +89,7 @@
         <br>
         <p>Welcome, Overseer.</p>
         <div class="divider"></div>
-        <ul>
-          <li><a id='camera' href="#">Camera</a></li>
-          <li><a id='energy' href="#">Energy</a></li>
-          <li><a id='thermostat' href="#">Thermostat</a></li>
-          <li><a id='smoke' href="#">Smoke + CO</a></li>
-        </ul>
+        <ul id='devices'></ul>
       </div>
     </div>
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
