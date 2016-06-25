@@ -10,7 +10,5 @@ document.getElementById('power-button').addEventListener 'click', (e) ->
   term.classList.toggle 'terminal-on'
   if term.classList.contains('terminal-on')
     terminal.on()
-    document.getElementById('poweron').play()
   else
     terminal.off()
-    document.getElementById('poweroff').play()
