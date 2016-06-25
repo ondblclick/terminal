@@ -13,18 +13,15 @@
       </div>
     </div>
 
-    <div id="camera" class="screen">
-      <div class="screen-inner">
-        CAMERA SCREEN
-      </div>
-    </div>
-
     <div id="authorize" class="screen">
       <div class="screen-inner">
         <div>ROBCO INDUSTRIES (TM) TERMALINK PROTOCOL</div>
-        <div>ENTER PIN NOW</div>
-        <div id='input' style='height: 15px;'></div>
+        <div>ENTER PIN NOW <a href="https://home.nest.com/login/oauth2?client_id=675828bd-1689-4422-94f4-4b3a5776746f&state=STATE" target="_blank">(wondering how to get?)</a></div>
         <br>
+        <div id='input'></div>
+        <br>
+        <br>
+        <div class="divider"></div>
         <div id='symbols'>
           <a href='#'>A</a>
           <a href='#'>B</a>
@@ -64,6 +61,7 @@
           <a href="#">8</a>
           <a href="#">9</a>
         </div>
+        <div class="divider"></div>
         <br>
         <a href="#" id='ok'>OK</a>
       </div>
@@ -74,6 +72,8 @@
         <div class="text-center">
           <div>TERMINAL LOCKED</div>
           <div>PLEASE CONTACT AN ADMINISTRATOR</div>
+          <br>
+          <div id='message'></div>
         </div>
       </div>
     </div>
@@ -88,14 +88,15 @@
         <br>
         <p>Welcome, Overseer.</p>
         <div class="divider"></div>
-        <ul>
-          <li><a id='camera' href="#">Camera</a></li>
-          <li><a id='energy' href="#">Energy</a></li>
-          <li><a id='thermostat' href="#">Thermostat</a></li>
-          <li><a id='smoke' href="#">Smoke + CO</a></li>
-        </ul>
+        <ul id='devices'></ul>
       </div>
     </div>
+
+    <audio id='poweron' src="./audios/poweron.mp3"></audio>
+    <audio id='poweroff' src="./audios/poweroff.mp3"></audio>
+    <audio id='passbad' src="./audios/passbad.mp3"></audio>
+    <audio id='passgood' src="./audios/passgood.mp3"></audio>
+
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <script type="text/javascript" src="javascripts/index.js"></script>
   </body>

@@ -16,7 +16,7 @@
     <div id="authorize" class="screen">
       <div class="screen-inner">
         <div>ROBCO INDUSTRIES (TM) TERMALINK PROTOCOL</div>
-        <div>ENTER PIN NOW</div>
+        <div>ENTER PIN NOW <a href="https://home.nest.com/login/oauth2?client_id=675828bd-1689-4422-94f4-4b3a5776746f&state=STATE" target="_blank">(wondering how to get?)</a></div>
         <br>
         <div id='input'></div>
         <br>
@@ -64,7 +64,6 @@
         <div class="divider"></div>
         <br>
         <a href="#" id='ok'>OK</a>
-        <a href="https://home.nest.com/login/oauth2?client_id=675828bd-1689-4422-94f4-4b3a5776746f&state=STATE" target="_blank">(hit me, Dweller)</a>
       </div>
     </div>
 
@@ -92,6 +91,12 @@
         <ul id='devices'></ul>
       </div>
     </div>
+
+    <audio id='poweron' src="./audios/poweron.mp3"></audio>
+    <audio id='poweroff' src="./audios/poweroff.mp3"></audio>
+    <audio id='passbad' src="./audios/passbad.mp3"></audio>
+    <audio id='passgood' src="./audios/passgood.mp3"></audio>
+
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <script type="text/javascript" src="javascripts/index.js"></script>
   </body>

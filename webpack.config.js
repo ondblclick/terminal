@@ -1,5 +1,4 @@
 var ExtractTextPlugin = require ('extract-text-webpack-plugin');
-// var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
@@ -16,7 +15,8 @@ module.exports = {
       { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass') },
       { test: /\.png$/, loader: 'file-loader?name=/images/[name].[ext]' },
       { test: /\.(eot|svg|ttf|woff)$/, loader: 'file-loader?name=/fonts/[name].[ext]' },
-      { test: /\.html$/, loader: 'file-loader?name=/[name].[ext]' }
+      { test: /\.html$/, loader: 'file-loader?name=/[name].[ext]' },
+      { test: /\.mp3$/, loader: 'file-loader?name=/audios/[name].[ext]' }
     ]
   },
   plugins: [

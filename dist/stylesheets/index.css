@@ -14,6 +14,27 @@
   user-select: none;
   box-sizing: border-box; }
 
+#input {
+  height: 15px;
+  position: relative;
+  float: left; }
+  #input:after {
+    position: absolute;
+    content: '';
+    width: .5em;
+    height: 1em;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    animation: blink 1s linear infinite; }
+
+.progressbar {
+  position: absolute;
+  bottom: 1em;
+  right: 20px;
+  left: 20px;
+  bottom: 20px; }
+
 .screen-inner {
   font-size: 18px;
   line-height: 20px;
@@ -108,6 +129,12 @@
     background-position: 0 -100vh; }
   35%, 100% {
     background-position: 0 100vh; } }
+
+@keyframes blink {
+  0%, 49% {
+    background: transparent; }
+  50%, 100% {
+    background: rgba(128, 255, 128, 0.8); } }
 
 .screen {
   display: none; }

@@ -10,10 +10,12 @@ class AuthorizeScreen extends TerminalScreen
       pin = document.getElementById('input').innerText
       Api.getToken pin, (res) =>
         TerminalScreen.stopProgressBar()
-        nextScreen = if res.access_token
-          new MenuScreen('menu', res.access_token)
+        if res.access_token
+          nextScreen = new MenuScreen('menu', res.access_token)
+          document.getElementById('passgood').play()
         else
-          new AuthorizeFailScreen('authorize_fail', "(#{res.error_description})")
+          nextScreen = new AuthorizeFailScreen('authorize_fail', "(#{res.error_description})")
+          document.getElementById('passbad').play()
         @navigateTo nextScreen
 
     document.getElementById('symbols').addEventListener 'click', (e) ->
