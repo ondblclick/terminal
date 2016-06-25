@@ -1,0 +1,31 @@
+.terminal {
+  width: 930px;
+  height: 700px;
+  background-size: contain;
+  margin: 0 auto;
+  position: relative;
+  background-image: url('../images/power_off.png');
+
+  &.terminal-on {
+    background-image: url('../images/power_on.png');
+
+    .display {
+      background-image: radial-gradient(ellipse 500% 100% at 50% 90%, transparent, #121);
+      background: #131;
+
+      &:after,
+      &:before {
+        content: '';
+      }
+    }
+  }
+
+  .power-button {
+    position: absolute;
+    width: 54px;
+    height: 50px;
+    right: 157px;
+    bottom: 49px;
+    cursor: pointer;
+  }
+}

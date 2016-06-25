@@ -1,0 +1,121 @@
+.screen-inner {
+  font-size: 18px;
+  line-height: 20px;
+  font-family: 'fsex';
+  color: rgba(128, 255, 128, .8);
+  font-weight: normal;
+  text-shadow: 0 0 1px #3f3,
+               0 0 1px rgba(255, 255, 255, .8);
+
+
+  .text-center {
+    text-align: center;
+  }
+
+  #input {
+    height: 15px;
+    position: relative;
+    float: left;
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: .5em;
+      height: 1em;
+      left: 100%;
+      top: 0;
+      bottom: 0;
+      animation: blink 1s linear infinite;
+    }
+  }
+
+  .divider {
+    margin: .5em 0;
+    border-bottom: 2px solid rgba(128, 255, 128, 0.8);
+  }
+
+  p {
+    margin-bottom: .5em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      padding: 1px 3px;
+      margin: -1px -3px;
+      background-color: rgba(128, 255, 128, 0.8);
+      color: #131;
+      text-shadow: none;
+    }
+  }
+
+  ul {
+    display: block;
+    list-style-type: none;
+
+    li {
+      display: block;
+      margin-bottom: .5em;
+
+      a {
+        display: block;
+
+        &:before {
+          content: '>';
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.display {
+  overflow: hidden;
+  padding: 20px;
+  position: absolute;
+  left: 96px;
+  top: 81px;
+  right: 90px;
+  bottom: 165px;
+  background: #000;
+  border-radius: 10px;
+  background-image: radial-gradient(ellipse 500% 100% at 50% 90%, transparent, #121);
+  box-shadow: inset 0 0 10em 1em rgba(0, 0, 0, 0.5);
+
+  &:after,
+  &:before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  &:after {
+    background-image: radial-gradient(ellipse 50% 15% at 50% 15%, rgba(255, 255, 255, 0.05), transparent),
+                      radial-gradient(ellipse 50% 10% at 50% 12%, rgba(255, 255, 255, 0.1), transparent),
+                      radial-gradient(ellipse 50% 5% at 50% 10%, rgba(255, 255, 255, 0.1), transparent),
+                      radial-gradient(ellipse 50% 3% at 50% 9%, rgba(255, 255, 255, 0.1), transparent),
+                      radial-gradient(ellipse 200% 20% at 50% 0%, rgba(0, 0, 0, 0.5), transparent),
+                      linear-gradient(0deg, rgba(0, 0, 0, 0.2) 50%, transparent 50%);
+    background-size: 100%, 100%, 100%, 100%, 100%, 100% 0.25ch;
+  }
+
+  &:before {
+    background-image: linear-gradient(0deg, transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.8) 3%, rgba(32, 128, 32, 0.2) 3%, transparent 100%);
+    background-repeat: no-repeat;
+    animation: scan 5.5s linear 0s infinite;
+  }
+
+  .progressbar {
+    position: absolute;
+    bottom: 1em;
+    right: 20px;
+    left: 20px;
+    bottom: 20px;
+  }
+}
