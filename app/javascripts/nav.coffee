@@ -1,14 +1,14 @@
 ListScreen = require('./screens/list_screen.coffee')
 AuthorizeFailScreen = require('./screens/authorize_fail_screen.coffee')
 AuthorizeScreen = require('./screens/authorize_screen.coffee')
-DeviceScreen = require('./screens/device_screen.coffee')
+ItemScreen = require('./screens/item_screen.coffee')
 
 class Nav
   @constructors:
     'ListScreen': ListScreen
     'AuthorizeFailScreen': AuthorizeFailScreen
     'AuthorizeScreen': AuthorizeScreen
-    'DeviceScreen': DeviceScreen
+    'ItemScreen': ItemScreen
 
   @history: []
 
