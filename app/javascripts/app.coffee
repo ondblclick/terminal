@@ -1,8 +1,9 @@
 Terminal = require('./terminal.coffee')
 AuthorizeScreen = require('./screens/authorize_screen.coffee')
-Api = require('./api/api.coffee')
+Nav = require('./nav.coffee')
 
-terminal = new Terminal({ startScreen: new AuthorizeScreen('authorize') })
+Terminal.nav = Nav
+terminal = new Terminal({ startScreen: Terminal.nav.create('AuthorizeScreen', 'authorize') })
 
 document.getElementById('power-button').addEventListener 'click', (e) ->
   term = e.target.parentNode

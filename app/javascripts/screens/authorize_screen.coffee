@@ -1,8 +1,6 @@
 TerminalScreen = require('../screen.coffee')
 Terminal = require('../terminal.coffee')
-AuthorizeFailScreen = require('./authorize_fail_screen.coffee')
-MenuScreen = require('./menu_screen.coffee')
-Api = require('../api/api.coffee')
+Api = require('../api.coffee')
 
 class AuthorizeScreen extends TerminalScreen
   afterRun: ->
@@ -13,10 +11,10 @@ class AuthorizeScreen extends TerminalScreen
       Api.getToken pin, (res) =>
         TerminalScreen.stopProgressBar()
         if res.access_token
-          nextScreen = new MenuScreen('menu', res.access_token)
+          nextScreen = Terminal.nav.create 'ListScreen', 'list', Api.getData(res.access_token)
           Terminal.playSound('passgood')
         else
-          nextScreen = new AuthorizeFailScreen('authorize_fail', "(#{res.error_description})")
+          nextScreen = Terminal.nav.create 'AuthorizeFailScreen', 'authorize_fail', "(#{res.error_description})"
           Terminal.playSound('passbad')
         @navigateTo nextScreen
 

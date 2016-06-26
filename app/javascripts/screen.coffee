@@ -1,8 +1,10 @@
 class TerminalScreen
-  constructor: (@path) ->
+  constructor: (@path, @ref, @parentItem) ->
     @interval = false
 
   afterRun: ->
+
+  detach: ->
 
   el: ->
     document.getElementById(@path)
@@ -11,6 +13,7 @@ class TerminalScreen
     document.getElementById('display')
 
   navigateTo: (screen) ->
+    @detach()
     @displayEl().innerHTML = ''
     screen.run()
 
