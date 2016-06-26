@@ -1,3 +1,5 @@
+Terminal = require('./terminal.coffee')
+
 class TerminalScreen
   constructor: (@path, @ref, @parentItem) ->
     @interval = false
@@ -5,6 +7,12 @@ class TerminalScreen
   afterRun: ->
 
   detach: ->
+
+  bindings: ->
+    document.getElementById('back').addEventListener 'click', (e) =>
+      e.preventDefault()
+      Terminal.playSound('kenter')
+      @navigateTo(Terminal.nav.back())
 
   el: ->
     document.getElementById(@path)
@@ -21,6 +29,7 @@ class TerminalScreen
     @displayEl().innerHTML = ''
     @displayEl().appendChild(@el().children[0].cloneNode(true))
     @afterRun()
+    @bindings()
 
   @startProgressBar: ->
     @stopProgressBar()
@@ -28,10 +37,11 @@ class TerminalScreen
     unless el
       el = document.createElement('div')
       el.classList.add('progressbar')
+      el.innerText = 'Loading'
       document.querySelector('.display .screen-inner').appendChild(el)
 
     @interval = setInterval ->
-      el.innerHTML += '*'
+      el.innerText += '.'
     , 500
 
   @stopProgressBar: ->

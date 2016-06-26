@@ -1,13 +1,17 @@
 TerminalScreen = require('../screen.coffee')
 
 class DeviceScreen extends TerminalScreen
-  afterRun: ->
-    @ref.on 'value', (snapshot) ->
-      console.log snapshot.val()
+  detach: ->
+    @ref.off 'value'
 
-    document.getElementById('back').addEventListener 'click', (e) =>
-      e.preventDefault()
-      Terminal.playSound('kenter')
-      @navigateTo(Terminal.nav.back())
+  clear: ->
+
+  render: (snapshot) ->
+    console.log snapshot.val()
+
+  afterRun: ->
+    @ref.on 'value', (snapshot) =>
+      @clear()
+      @render(snapshot)
 
 module.exports = DeviceScreen
