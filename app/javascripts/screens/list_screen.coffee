@@ -21,7 +21,7 @@ class ListScreen extends TerminalScreen
         a.innerText = v.name
         a.onclick = =>
           Terminal.playSound('kenter')
-          @navigateTo(Terminal.nav.create('ItemScreen', @parentItem, @ref.child(k)))
+          Terminal.Nav.goTo(@, 'ItemScreen', @parentItem, @ref.child(k))
 
         li.appendChild a
         document.querySelector('.display ul').appendChild li
@@ -37,7 +37,7 @@ class ListScreen extends TerminalScreen
         a.innerText = listItem
         a.onclick = =>
           Terminal.playSound('kenter')
-          @navigateTo(Terminal.nav.create('ListScreen', 'list', @ref.child(listItem), listItem))
+          Terminal.Nav.goTo(@, 'ListScreen', 'list', @ref.child(listItem), listItem)
 
         li.appendChild a
         document.querySelector('.display ul').appendChild li

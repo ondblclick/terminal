@@ -11,12 +11,12 @@ class AuthorizeScreen extends TerminalScreen
       Api.getToken pin, (res) =>
         TerminalScreen.stopProgressBar()
         if res.access_token
-          nextScreen = Terminal.nav.create 'ListScreen', 'list', Api.getData(res.access_token)
+          nextScreenParams = ['ListScreen', 'list', Api.getData(res.access_token)]
           Terminal.playSound('passgood')
         else
-          nextScreen = Terminal.nav.create 'AuthorizeFailScreen', 'authorize_fail', "(#{res.error_description})"
+          nextScreenParams = ['AuthorizeFailScreen', 'authorize_fail', "(#{res.error_description})"]
           Terminal.playSound('passbad')
-        @navigateTo nextScreen
+        Terminal.Nav.goTo @, nextScreenParams...
 
     document.getElementById('symbols').addEventListener 'click', (e) ->
       return unless e.target.tagName is 'A'

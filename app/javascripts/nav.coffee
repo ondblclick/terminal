@@ -12,14 +12,17 @@ class Nav
 
   @history: []
 
-  @create: (name, rest...) ->
+  @goTo: (current, name, rest...) ->
+    if current
+      current.detach()
+      current.displayEl().innerHTML = ''
     @history.push([name, rest...])
-    screen = new @constructors[name](rest...)
-    screen
+    next = new @constructors[name](rest...)
+    next.run()
 
   @back: ->
     rec = @history[@history.length - 2]
     @history.length = @history.length - 2
-    @create(rec...)
+    rec
 
 module.exports = Nav

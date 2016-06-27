@@ -12,18 +12,13 @@ class TerminalScreen
     document.getElementById('back').addEventListener 'click', (e) =>
       e.preventDefault()
       Terminal.playSound('kenter')
-      @navigateTo(Terminal.nav.back())
+      Terminal.Nav.goTo(@, Terminal.Nav.back()...)
 
   el: ->
     document.getElementById(@path)
 
   displayEl: ->
     document.getElementById('display')
-
-  navigateTo: (screen) ->
-    @detach()
-    @displayEl().innerHTML = ''
-    screen.run()
 
   run: ->
     @displayEl().innerHTML = ''

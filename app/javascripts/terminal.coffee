@@ -1,7 +1,7 @@
 class Terminal
   @KEYS: ['k1', 'k2', 'k3', 'k4', 'k5', 'k6', 'k7', 'k8', 'k9', 'k10', 'k11']
 
-  constructor: (@screen) ->
+  constructor: ->
     @state = false
 
   terminal: ->
@@ -12,7 +12,7 @@ class Terminal
 
   on: ->
     @terminal().classList.add 'terminal-on'
-    @screen.run()
+    Terminal.Nav.goTo(null, 'AuthorizeScreen', 'authorize')
     Terminal.playSound('poweron')
 
   off: ->
