@@ -1,6 +1,7 @@
 TerminalScreen = require('../screen.coffee')
 
 class DeviceScreen extends TerminalScreen
+  # fields to be shown on the item screen
   @fields =
     'structures': [
       'name',
@@ -40,14 +41,15 @@ class DeviceScreen extends TerminalScreen
     @ref.off 'value'
 
   clear: ->
-    document.querySelector('.display .dynamic').innerHTML = '' if document.querySelector('.display .dynamic')
+    Array.from(document.querySelectorAll('.screen .dynamic')).forEach (el) -> el.remove()
 
   render: (snapshot) ->
     for k, v of snapshot.val()
       if k in @constructor.fields[@path]
         li = document.createElement('li')
         li.innerText = "#{k}: #{v}"
-        document.querySelector('.display .info').appendChild(li)
+        li.classList.add('dynamic')
+        document.querySelector('.screen .info').appendChild(li)
 
   afterRun: ->
     @ref.on 'value', (snapshot) =>

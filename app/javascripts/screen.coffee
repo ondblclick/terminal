@@ -14,26 +14,23 @@ class TerminalScreen
       Terminal.playSound('kenter')
       Terminal.Nav.goTo(@, Terminal.Nav.back()...)
 
-  el: ->
-    document.getElementById(@path)
-
-  displayEl: ->
-    document.getElementById('display')
-
   run: ->
-    @displayEl().innerHTML = ''
-    @displayEl().appendChild(@el().children[0].cloneNode(true))
+    Terminal.screen().innerHTML = ''
+    Terminal.screen().appendChild(@cloneTemplate())
     @afterRun()
     @bindings()
 
+  cloneTemplate: ->
+    document.getElementById(@path).children[0].cloneNode(true)
+
   @startProgressBar: ->
     @stopProgressBar()
-    el = document.querySelector('.display .progressbar')
+    el = document.querySelector('.screen .progressbar')
     unless el
       el = document.createElement('div')
       el.classList.add('progressbar')
       el.innerText = 'Loading'
-      document.querySelector('.display .screen-inner').appendChild(el)
+      document.querySelector('.screen .screen-inner').appendChild(el)
 
     @interval = setInterval ->
       el.innerText += '.'
@@ -41,7 +38,7 @@ class TerminalScreen
 
   @stopProgressBar: ->
     clearInterval(@interval)
-    el = document.querySelector('.display .progressbar')
+    el = document.querySelector('.screen .progressbar')
     el.remove() if el
 
 module.exports = TerminalScreen

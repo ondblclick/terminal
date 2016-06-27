@@ -15,7 +15,6 @@ class Nav
   @goTo: (current, name, rest...) ->
     if current
       current.detach()
-      current.displayEl().innerHTML = ''
     @history.push([name, rest...])
     next = new @constructors[name](rest...)
     next.run()
