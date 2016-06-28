@@ -16,7 +16,8 @@ module.exports = {
       { test: /\.png$/, loader: 'file-loader?name=/images/[name].[ext]' },
       { test: /\.(eot|svg|ttf|woff)$/, loader: 'file-loader?name=/fonts/[name].[ext]' },
       { test: /\.html$/, loader: 'file-loader?name=/[name].[ext]' },
-      { test: /\.mp3$/, loader: 'file-loader?name=/audios/[name].[ext]' }
+      { test: /\.mp3$/, loader: 'file-loader?name=/audios/[name].[ext]' },
+      { test: /\.hbs$/, loader: 'handlebars-loader' }
     ]
   },
   plugins: [

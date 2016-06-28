@@ -4,19 +4,22 @@ class TerminalScreen
   constructor: (@path, @ref, @parentItem) ->
     @interval = false
 
+  tmpl: ->
+
   afterRun: ->
 
   detach: ->
 
   bindings: ->
-    document.getElementById('back').addEventListener 'click', (e) =>
+    backBtn = document.getElementById('back')
+    return unless backBtn
+    backBtn.addEventListener 'click', (e) =>
       e.preventDefault()
       Terminal.playSound('kenter')
       Terminal.Nav.goTo(@, Terminal.Nav.back()...)
 
   run: ->
-    Terminal.screen().innerHTML = ''
-    Terminal.screen().appendChild(@cloneTemplate())
+    Terminal.screen().innerHTML = @tmpl()
     @afterRun()
     @bindings()
 

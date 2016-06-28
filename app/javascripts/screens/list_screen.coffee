@@ -1,8 +1,11 @@
 TerminalScreen = require('../screen.coffee')
 Terminal = require('../terminal.coffee')
+tmpl = require('../../templates/list_screen.hbs')
 
 class ListScreen extends TerminalScreen
   @blackListItems: ['metadata']
+
+  tmpl: -> tmpl()
 
   detach: ->
     @ref.off 'value'

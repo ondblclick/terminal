@@ -1,8 +1,11 @@
 TerminalScreen = require('../screen.coffee')
 Terminal = require('../terminal.coffee')
 Api = require('../api.coffee')
+tmpl = require('../../templates/authorize_screen.hbs')
 
 class AuthorizeScreen extends TerminalScreen
+  tmpl: -> tmpl()
+
   afterRun: ->
     document.getElementById('ok').addEventListener 'click', (e) =>
       Terminal.playSound('kenter')

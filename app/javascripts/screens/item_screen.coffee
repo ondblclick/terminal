@@ -1,4 +1,5 @@
 TerminalScreen = require('../screen.coffee')
+tmpl = require('../../templates/item_screen.hbs')
 
 class DeviceScreen extends TerminalScreen
   # fields to be shown on the item screen
@@ -36,6 +37,8 @@ class DeviceScreen extends TerminalScreen
       'target_temperature_c',
       'is_locked'
     ]
+
+  tmpl: -> tmpl()
 
   detach: ->
     @ref.off 'value'
